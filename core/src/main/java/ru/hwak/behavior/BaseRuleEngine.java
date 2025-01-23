@@ -35,10 +35,10 @@ public class BaseRuleEngine {
      */
     public List<Decision> execute(final Context context) {
         var decisions = new ArrayList<Decision>();
-        compiledRules.forEach((key, value) -> {
-            if (value.getExpression().evaluate(context)) {
+        compiledRules.forEach((key, rule) -> {
+            if (rule.getExpression().evaluate(context)) {
                 decisions.addAll(
-                        getDecisions(value.getAction(), value.getParams(), context));
+                        getDecisions(rule.getAction(), rule.getParams(), context, rule.getName()));
             }
         });
         return decisions;
@@ -53,9 +53,10 @@ public class BaseRuleEngine {
      */
     private List<Decision> getDecisions(final String action,
             final Map<String, Object> params,
-            final Context context) {
+            final Context context,
+            final String ruleName) {
         return Optional.ofNullable(actionsRegistry.get(action))
-                .map(m -> m.calculateDecisions(context, params))
+                .map(m -> m.calculateDecisions(context, params, ruleName))
                 .orElse(Collections.emptyList());
     }
 

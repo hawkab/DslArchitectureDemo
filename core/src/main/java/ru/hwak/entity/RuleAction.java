@@ -10,5 +10,5 @@ import java.util.Map;
  * @since 23.01.2025
  */
 public interface RuleAction {
-    List<Decision> calculateDecisions(Context context, Map<String, Object> params);
+    List<Decision> calculateDecisions(final Context context, final Map<String, Object> params, final String ruleName);
 }

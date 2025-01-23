@@ -20,12 +20,17 @@ public class SendNotification implements RuleAction {
      * Формирует решение по отправке уведомления
      * @param context контекст запроса
      * @param params параметры правила
+     * @param ruleName имя сработавшего правила
      * @return решения по отправке уведомления
      */
     @Override
-    public List<Decision> calculateDecisions(Context context, Map<String, Object> params) {
+    public List<Decision> calculateDecisions(final Context context, final Map<String, Object> params, final String ruleName) {
         context.add("notificationType", "email");
         context.add("notificationTarget", params.get("customerEmail"));
-        return Collections.emptyList();
+        return Collections.singletonList(
+                new Decision("notification",
+                        "customerEmail",
+                        new Context(Map.copyOf(context.variables())),
+                        ruleName));
     }
 }

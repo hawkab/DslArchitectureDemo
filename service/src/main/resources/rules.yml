@@ -8,7 +8,7 @@
       value: 1000
   action: "applyDiscount"
   params:
-    discount: 10
+    discount: 15
 
 - name: "Regular Discount Rule"
   conditions:

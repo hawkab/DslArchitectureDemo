@@ -9,5 +9,6 @@ package ru.hwak.entity;
  * @param action Код предпринимаемого действия
  * @param target Объект действия
  * @param context Контекст выполнения
+ * @param ruleName Имя сработавшего правила
  */
-public record Decision(String action, Object target, Context context) { }
+public record Decision(String action, Object target, Context context, String ruleName) { }
