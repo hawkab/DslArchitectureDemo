@@ -19,13 +19,13 @@ public class BaseRuleEngine {
     public BaseRuleEngine(final List<RuleDefinition> ruleDefinitions,
             final Map<String, RuleAction> actionsRegistry,
             final Map<String, Condition> conditionRegistry) {
+        this.actionsRegistry.putAll(actionsRegistry);
+        this.conditionRegistry.putAll(conditionRegistry);
         //Сопоставление функций согласно условиям правила
         ruleDefinitions.forEach(rule -> {
             rule.setExpression(compileRule(rule));
             compiledRules.put(rule.getName(), rule);
         });
-        this.actionsRegistry.putAll(actionsRegistry);
-        this.conditionRegistry.putAll(conditionRegistry);
     }
 
     /**
