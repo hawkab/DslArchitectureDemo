@@ -1,0 +1,20 @@
+- name: "VIP Discount Rule"
+  conditions:
+    - type: "equal"
+      variable: "customerType"
+      value: "VIP"
+    - type: "greaterThan"
+      variable: "orderAmount"
+      value: 1000
+  action: "applyDiscount"
+  params:
+    discount: 10
+
+- name: "Regular Discount Rule"
+  conditions:
+    - type: "greaterThan"
+      variable: "orderAmount"
+      value: 2000
+  action: "applyDiscount"
+  params:
+    discount: 10
