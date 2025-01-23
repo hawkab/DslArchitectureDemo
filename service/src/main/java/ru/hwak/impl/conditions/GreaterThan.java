@@ -1,6 +1,6 @@
 package ru.hwak.impl.conditions;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import ru.hwak.behavior.Condition;
 import ru.hwak.behavior.RuleExpression;
@@ -11,7 +11,7 @@ import ru.hwak.behavior.RuleExpression;
  * @author olshansky
  * @since 23.01.2025
  */
-@Service
+@Component
 public class GreaterThan implements Condition {
 
     @Override

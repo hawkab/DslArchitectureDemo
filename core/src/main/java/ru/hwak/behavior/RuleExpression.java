@@ -11,5 +11,5 @@ import ru.hwak.entity.RuleDefinition;
  */
 @FunctionalInterface
 public interface RuleExpression {
-    boolean evaluate(Context context);
+    boolean evaluate(final Context context);
 }
