@@ -11,7 +11,10 @@ import ru.hwak.entity.Decision;
 import ru.hwak.entity.RuleAction;
 
 /**
- * Функция по отправке уведомления
+ * Функция по отправке уведомления.
+ *
+ * @author olshansky
+ * @since 24.01.2025
  */
 @Service
 public class SendNotification implements RuleAction {
