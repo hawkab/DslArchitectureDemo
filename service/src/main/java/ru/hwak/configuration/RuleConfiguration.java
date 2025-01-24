@@ -11,6 +11,12 @@ import ru.hwak.behavior.Condition;
 import ru.hwak.entity.RuleAction;
 import ru.hwak.util.RulesLoader;
 
+/**
+ * Конфигурация настройки движка правил.
+ *
+ * @author olshansky
+ * @since 24.01.2025
+ */
 @Configuration
 public class RuleConfiguration {
 
