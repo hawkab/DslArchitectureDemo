@@ -5,6 +5,9 @@ EN | [RU](README_ru.md)
 This application provides an example of implementing clean architecture combined with a computational 
 core based on DSL (Domain-Specific Language), utilizing readable and maintainable solutions.
 
+[![Support this project · TON network](https://hawkab.github.io/support/support-button.svg)](https://hawkab.github.io/support/)
+
+Optional contributions support development, maintenance and testing. The [support page](https://hawkab.github.io/support/) has a QR code, wallet link and copy buttons, and works on computers and phones. You choose the amount in your wallet.
 
 ## System Requirements
 - JDK 20
